@@ -205,7 +205,7 @@ img{
 @media(max-width:900px){
 
     :root{
-        --fs-body: 0.7rem;
+        --fs-body: 0.9rem;
     --fs-h1: 2rem;
     --fs-h2: 1rem;
     --fs-h3: 1rem;
