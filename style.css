@@ -238,7 +238,8 @@ img{
     body{
         display: flex;
         flex-direction: column;
-        padding:2em;
+        padding:0em;
+        padding-top: 2em;
         font-family: var(--ff);
     background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
     background-color:var(--clr-white);
