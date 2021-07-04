@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Spartan:wght@400;500;700&display=swap');
+*,
+::after,
+::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    font-size: 15px;
+    --ff:"Spartan";
+
+    --fs-body: 0.9rem;
+    --fs-h1: 3rem;
+    --fs-h2: 1rem;
+    --fs-h3: 1rem;
+
+    --fw-bold:700;
+    --fw-reg: 500;
+    --fw-light: 400;
+
+    --clr-v_dark_magenta: hsl(300, 43%, 22%);
+    --clr-dark_gray_magenta: hsl(303, 10%, 53%);
+    --clr-light_gray_magenta: hsl(300, 24%, 96%);
+    --clr-pink:hsl(333, 80%, 67%);
+    --clr-white:hsl(0, 0%, 100%);
+}
+
+/*  General Styles */
+
+body{
+    font-family: var(--ff);
+    background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+    background-color:var(--clr-white);
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "main company_review"
+    "people_review people_review";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 0em 11em;
+    min-width:1000px;
+    row-gap: 1em;
+    
+}
+
+/* Typography */
+
+h1{
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-bold);
+    color: var(--clr-v_dark_magenta);
+}
+
+h2{
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+}
+
+h3{
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-light);
+}
+p{
+    font-size: var(--fs-body);
+    font-weight: var(--fw-reg);
+    color: var(--clr-dark_gray_magenta);
+    line-height: 1.6;
+}
+
+/* Images */
+
+img{
+    
+}
+
+/* main */
+
+.main{
+    grid-area: main;
+    justify-self:self-start;
+    align-self: flex-end;
+    width: 80%;
+    padding: 2em;
+}
+
+.main .title{
+    padding-bottom: 1em;
+    line-height: 0.99;
+}
+
+.main .subtitle p{
+    font-size: 1rem;
+}
+
+/* review companies */
+
+.review_companies{
+    grid-area: company_review;
+    justify-self: self-end;
+    align-self: flex-end;
+    padding: 2em;
+}
+
+.review_company{
+    display: flex;
+    flex-direction: row;
+    padding: 1.25em 0em;
+    padding-right: 3em;
+    margin: 1em 0em;
+    background-color: var(--clr-light_gray_magenta);
+    border-radius: 10px;
+}
+
+
+
+.stars{
+    padding: 0em 2em;
+}
+.review_company h2{
+    color: var(--clr-v_dark_magenta);
+}
+
+.company_1{
+    margin-left: -6em;
+    width: 440px;
+}
+
+.company_2{
+    margin-left: -2em;
+    width: 440px;
+}
+
+.company_3{
+    margin-left: 2em;
+    width: 440px;
+}
+
+/* review people */
+.review_people{
+    grid-area:people_review;
+    display: flex;
+    align-self: flex-start;
+}
+.review{
+    background-color:var(--clr-v_dark_magenta);
+    border-radius: 10px;
+    margin: 2em;
+    padding: 3em;
+    display: grid;
+    grid-template-areas: 
+    "img name"
+    "img verified_buyer"
+    "body body";
+    grid-template-rows: 24px 24px 1fr;
+    grid-template-columns: 48px 1fr;
+    column-gap: 12px;
+    row-gap: 12px;
+    height: 250px;
+}
+
+.review h2{
+    grid-area:name;
+    color: var(--clr-light_gray_magenta);
+    align-self: flex-end;
+    justify-self: self-start;
+}
+.review h3{
+    grid-area:verified_buyer;
+    color: var(--clr-pink);
+    align-self:flex-start;
+    justify-self: self-start;
+    margin-top: -8px;
+}
+.review p{
+    grid-area: body;
+    color: var(--clr-white);
+    align-self: center;
+}
+.review img{
+    grid-area: img;
+    border-radius: 50%;
+    width: 48px;
+}
+.colton{
+    margin-top: 1em;
+}
+.irene{
+    margin-top: 2em;
+}
+.anne{
+    margin-top: 3em;
+}
+
+@media(max-width:1440px){
+    .review{
+        height:300px;
+    }
+}
+
+@media(max-width:900px){
+
+    :root{
+        --fs-body: 0.7rem;
+    --fs-h1: 2rem;
+    --fs-h2: 1rem;
+    --fs-h3: 1rem;
+    }
+    .review_company{
+        width:auto;
+    }
+    .company_1{
+        margin-left:0em;
+    }
+    .company_2{
+        margin-left:0em;
+    }
+    .company_3{
+        margin-left:0em;
+    }
+    .colton{
+        margin-top: 0em;
+    }
+    .irene{
+        margin-top: 0em;
+    }
+    .anne{
+        margin-top: 0em;
+    }
+    .review{
+        height:auto;
+    }
+
+    body{
+        display: flex;
+        flex-direction: column;
+        padding:2em;
+        font-family: var(--ff);
+    background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
+    background-color:var(--clr-white);
+    background-position: top left, bottom right;
+    background-repeat: no-repeat;
+    margin: 0em 1em;
+    min-width:200px;
+    }
+    .main{
+    justify-self:center;
+    text-align: center;
+    align-self: stretch;
+    width: 100%;
+    padding:0.5em 0em;
+    }
+
+    .review_companies{
+        justify-content: center;
+        align-self: stretch;
+        padding: 1em 0em;
+    }
+    .review_people{
+        flex-direction: column;
+    }
+    .review{
+        margin:0.5em 0em;
+    }
+    .review_company{
+        display: flex;
+        flex-direction: column;
+        padding: 1.5em 0em;
+        margin: 1em 0em;
+        background-color: var(--clr-light_gray_magenta);
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
